@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "consolas";
+    src: url("../../fonts/consola.ttf") format("truetype"),;
+}
+body{
+    background-color: #E7E9EB;
+}
+
+.a_tbdr{
+    border:1px dashed #000;
+}
+.a_h600{
+    min-height: 620px;
+}
+.a_consola{
+    font-family: "consolas","courier new", monospace !important;
+}
+#editableContent {
+    outline: none;
+    /* Additional styles if needed */
+}
+
+.loader {
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.4em;
+}
+
+@media only screen and (max-width: 576px) {
+    .container-fluid {
+        padding:8px !important;
+    }
+    .btn-success{
+       width: 100%;
+    }
+    .a_c1{
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+    .a_c1{
+        margin-bottom: 10px;
+    }
+}
