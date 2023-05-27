@@ -1,16 +1,14 @@
-
+@font-face {
+  font-family: "consolas";
+  src: url("../../public/fonts/consola.ttf") format("truetype"),;
+}
 body{
+
   background-color: #E7E9EB;
-} 
+}
 
 .a_tbdr{
   border:1px dashed #000;
-}
-.a_w10{
-  width: 200px;
-}
-.a_w5{
-  width: 100px;
 }
 .a_h600{
   min-height: 620px;
@@ -22,9 +20,28 @@ body{
   outline: none;
   /* Additional styles if needed */
 }
-
+pre:focus{
+  outline: none;
+}
 .loader {
-  width: 6rem;
-  height: 6rem;
-  border-width: 0.4em;
+  width: 6rem !important;
+  height: 6rem !important;
+  border-width: 0.4em !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .container-fluid {
+      padding:8px !important;
+  }
+  .btn-success{
+     width: 100%;
+  }
+  .a_c1{
+      margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  .a_c1{
+      margin-bottom: 10px;
+  }
 }
