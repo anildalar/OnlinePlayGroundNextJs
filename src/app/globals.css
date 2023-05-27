@@ -11,7 +11,7 @@ body{
   border:1px dashed #000;
 }
 .a_h600{
-  min-height: 620px;
+  min-height: 560px;
 }
 .a_consola{
   font-family: "consolas","courier new", monospace !important;

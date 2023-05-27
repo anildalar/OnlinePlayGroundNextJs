@@ -10,7 +10,7 @@ function Home({ data }) {
     //2.3 return statement
     return (
       <>
-        <div className="container-fluid p-5 pt-4">
+        <div className="container-fluid p-4 pt-3">
           <h1 className="text-center mb-4">Online Code Playground</h1>
           <div className="row m-0 mb-2">
             <div className="col-12 col-sm-2 p-0 mb-2 me-2">
