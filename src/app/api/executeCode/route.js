@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 const { promisify } = require('util');
 const { exec } = require('child_process');
-
+import formidable from "formidable";
 const execAsync = promisify(exec);
 
 
@@ -27,8 +27,27 @@ async function run(cmd) {
 }
 
 
-export async function GET(request) {
+export async function POST(request) {
+  const form = new formidable.IncomingForm({ multiple: true });
+
+  const formData = new Promise((resolve, reject) => {
+    form.parse(req, async (err, fields, files) => {
+      if (err) {
+        console.log("err", err);
+        reject("error");
+      }
+      resolve({ fields, files });
+    });
+  });
+
+  try {
+    const { lng, ver, code } = await formData;
+    return NextResponse.json({ data:{lng,ver,code} });
     
+  } catch (e) {
+    
+  }
+
     const { searchParams } = new URL(request.url);
     const lng = searchParams.get('lng');
     const ver = searchParams.get('ver');
