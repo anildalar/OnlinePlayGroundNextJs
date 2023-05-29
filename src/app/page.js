@@ -54,7 +54,7 @@ function Home({ langs }) {
             </div>
           </div>
           <div className="row m-0">
-            <div className="col-12 col-lg-6 a_c1 shadow-sm ps-0 pe-1 a_h600 python">
+            <div className="col-12 bg-white col-lg-6 a_c1 shadow-sm ps-0 pe-1 a_h600 python">
               <pre className="p-2 h-100 mb-0 bg-white shadow-none" contentEditable="true" suppressContentEditableWarning={true}><code data-language="python" className="h-100 shadow-none">def openFile(path):{"\n"}{"  "}file = open(path, "r"){"\n"}{"  "}content = file.read(){"\n"}{"  "}file.close(){"\n"}{"  "}return content{"\n"}{"              "}</code>{"\n"}{"              "}</pre>
             </div>
             <div className="col-12 col-lg-6 position-relative  pe-0 ps-1 a_h600">
