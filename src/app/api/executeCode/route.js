@@ -26,27 +26,27 @@ async function run(cmd) {
     }
 }
 
-
 export async function POST(request) {
-  const form = new formidable.IncomingForm({ multiple: true });
+  
+    return NextResponse.json({ data:{lng:'',ver:'',code:''} });
+    const form = new formidable.IncomingForm({ multiple: true });
 
-  const formData = new Promise((resolve, reject) => {
-    form.parse(req, async (err, fields, files) => {
-      if (err) {
-        console.log("err", err);
-        reject("error");
-      }
-      resolve({ fields, files });
+    const formData = new Promise((resolve, reject) => {
+      form.parse(req, async (err, fields, files) => {
+        if (err) {
+          console.log("err", err);
+          reject("error");
+        }
+        resolve({ fields, files });
+      });
     });
-  });
 
-  try {
-    const { lng, ver, code } = await formData;
-    return NextResponse.json({ data:{lng,ver,code} });
-    
-  } catch (e) {
-    
-  }
+    try {
+      const { lng, ver, code } = await formData;
+      
+    } catch (e) {
+      
+    }
 
     const { searchParams } = new URL(request.url);
     const lng = searchParams.get('lng');
@@ -57,8 +57,7 @@ export async function POST(request) {
     //var cmd = `winpty docker exec -it ani_cont_py3 python -c '"${code}"' `;
     //var cmd = `docker exec -it ani_cont_py3 python -c 'print("Hello, World!")'`;
     const cmd = `docker exec ani_cont_py3 python -c "${code}"`;
-    
-    let response = await run(cmd);
 
+    let response = await run(cmd);
     return NextResponse.json({ data:response });
 }
