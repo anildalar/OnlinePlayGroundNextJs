@@ -85,8 +85,7 @@ export default function A() {
               </div>
               <div className="row m-0">
                 <div className="col-12 col-lg-12 position-relative  pe-0 ps-1 a_h600">
-                    <div className="mt-3 shadow-sm bg-black text-white h-100 p-2 a_consola a_output">
-                                              
+                    <div className="mt-3 shadow-sm bg-black text-white h-100 p-2 a_consola a_output">                 
                     </div>
                   </div>
               </div>
