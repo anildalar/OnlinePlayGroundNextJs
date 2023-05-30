@@ -6,7 +6,6 @@ import { URL } from "@/helper/helper";
 async function Home() {
   const res = await fetch(URL+'/api/getAllLanguages2',{ cache:'no-store'});
   const langs = await res.json();
-
   //2.3 functions defination
   
   console.log(langs);
