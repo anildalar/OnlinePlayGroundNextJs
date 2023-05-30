@@ -1,6 +1,9 @@
 'use client'
-export default function A({langs}) {
 
+export default function A({langs}) {
+    //2.1 Hooks area
+
+    //2.2 Functiond defination area
     let handleSubmit = (e)=>{
       e.preventDefault();
       
@@ -16,8 +19,8 @@ export default function A({langs}) {
                                   <div class="loader text-success spinner-border" role="status">
                                       <span class="visually-hidden">Loading...</span>
                                   </div>
-                                </div>
-                              `;
+                                </div>`;
+
           const formData = new FormData();
 
           formData.append('lng',lang);
@@ -40,6 +43,7 @@ export default function A({langs}) {
           });  
       }
     }
+    //2.3 return area
     return (
         <>
           <div className="row m-0">
@@ -71,7 +75,9 @@ export default function A({langs}) {
                   </div>
                   <div className="row m-0">
                     <div className="col-12 bg-white col-lg-12 a_c1 shadow-sm ps-0 pe-1 a_h600 python">
-                      <pre className="p-2 h-100 mb-0 bg-white shadow-none" contentEditable="true" suppressContentEditableWarning={true}><code data-language="python" className="h-100 shadow-none">print('hello world !')</code></pre>
+                      <pre className="h-100 mb-0 bg-white shadow-none">
+                        <code contentEditable="true" suppressContentEditableWarning={true} data-language="python" className="d-block p-2 h-100 shadow-none">print('hello world !')</code>
+                      </pre>
                     </div>
                   </div>
                 </form>     

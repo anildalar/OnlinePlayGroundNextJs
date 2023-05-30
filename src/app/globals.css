@@ -20,7 +20,7 @@ body{
   outline: none;
   /* Additional styles if needed */
 }
-pre:focus{
+code:focus{
   outline: none;
 }
 .loader {
