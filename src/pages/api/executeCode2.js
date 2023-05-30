@@ -73,7 +73,7 @@ export default async function handler(req, res) {
 
         var cmd = `docker exec anj_cont1 rm -rf ./${filename}`;
         let response3 = await run(cmd);
-        console.log('file deleted from container');
+        console.log('file deleted from container'); 
 
         fs.unlink( path, ()=>{
           console.log('file deleted from host');
