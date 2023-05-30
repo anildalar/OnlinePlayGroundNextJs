@@ -23,6 +23,9 @@ body{
 code:focus{
   outline: none;
 }
+#ace-editor{
+  height: 100% !important;
+}
 .loader {
   width: 6rem !important;
   height: 6rem !important;

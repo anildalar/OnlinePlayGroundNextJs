@@ -1,15 +1,35 @@
 'use client'
 
+import { useState } from "react";
+import CodeEditor from "../CodeEditor";
+
 export default function A({langs}) {
     //2.1 Hooks area
+    const [code, setCode] = useState('');
+
+    
 
     //2.2 Functiond defination area
+    const handleCodeChange = (value) => {
+      setCode(value);
+    };
     let handleSubmit = (e)=>{
       e.preventDefault();
       
       let lang = document.querySelector('.a_language').value;
       let ver = document.querySelector('.a_version').value;
-      let code = document.querySelector('code[data-language]').innerHTML;
+
+
+
+      //var code = document.querySelector('code[data-language]').innerHTML;
+      
+      //code = code.replace(/<div>/g, '\n<div>');
+      // Remove HTML tags
+     // code = code.replace(/<[^>]+>/g, '');
+
+      // Add line breaks after <div> tags
+      //code = code.replace(/<div>/g, '\n<div>');
+     // code = code.replace(/print\(/g, 'print(\n');
 
       if(lang ===''  || ver === '' || code === ''){
         alert('need validation');
@@ -75,9 +95,7 @@ export default function A({langs}) {
                   </div>
                   <div className="row m-0">
                     <div className="col-12 bg-white col-lg-12 a_c1 shadow-sm ps-0 pe-1 a_h600 python">
-                      <pre className="h-100 mb-0 bg-white shadow-none">
-                        <code contentEditable="true" suppressContentEditableWarning={true} data-language="python" className="d-block p-2 h-100 shadow-none">print('hello world !')</code>
-                      </pre>
+                       <CodeEditor value={code} onChange={handleCodeChange} />   
                     </div>
                   </div>
                 </form>     
